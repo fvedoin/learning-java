@@ -249,14 +249,4 @@ public class LivroController {
 		session.close();
 	}
 
-	public static void main(String[] args) {
-
-		listaLivros();
-
-		insereLivro();
-
-		buscaLivros();
-
-	}
-
 }

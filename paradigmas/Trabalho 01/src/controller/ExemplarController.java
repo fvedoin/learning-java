@@ -1,6 +1,8 @@
 package controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import org.hibernate.Criteria;
@@ -42,5 +44,28 @@ public class ExemplarController {
 		session.getTransaction().commit();
 		session.close();
 
+	}
+	public static void resetaExemplares() {
+		
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+		session.beginTransaction();
+
+		Criteria crit = session.createCriteria(Exemplar.class);
+
+		java.util.List<Exemplar> results = crit.list();
+		
+		Iterator<Exemplar> it = results.iterator();
+	
+		while (it.hasNext()) {
+			Exemplar exemplar2 = it.next();
+			exemplar2.setReservado(false);
+			exemplar2.setSituacao(true);
+			session.update(exemplar2);
+		}
+		
+		session.getTransaction().commit();
+		session.close();
+		return;
 	}
 }

@@ -117,10 +117,4 @@ public class UsuarioController {
 		System.out.println("Usuário cadastrado com sucesso!");
 	}
 	
-	public static void main(String[] args) {
-				
-		ArrayList<Usuario> objs = new ArrayList<Usuario>();
-		insereUsuario(objs);		
-		listaUsuarios(objs);
-	}
 }

@@ -58,7 +58,10 @@ public class Index {
 		UsuarioController usuario = new UsuarioController();
 		EmprestimoController emprestimo = new EmprestimoController();
 		ReservaController reserva= new ReservaController();
+		ExemplarController exemplar= new ExemplarController();
 
+		exemplar.resetaExemplares();
+		
 		ArrayList<Usuario> ul = new ArrayList<Usuario>();
 		ArrayList<Emprestimo> el = new ArrayList<Emprestimo>();
 		ArrayList<Reserva> rl = new ArrayList<Reserva>();
